@@ -7,12 +7,17 @@ blogsRouter.get('/', (req, res) => {
   });
 });
 
-blogsRouter.post('/', (req, res) => {
+blogsRouter.post('/', (req, res, next) => {
   const blog = new Blog(req.body);
 
-  blog.save().then((result) => {
-    res.status(201).json(result);
-  });
+  blog
+    .save()
+    .then((result) => {
+      res.status(201).json(result);
+    })
+    .catch((exception) => {
+      next(exception);
+    });
 });
 
 module.exports = blogsRouter;
