@@ -13,5 +13,6 @@ module.exports = {
     'no-underscore-dangle': 0,
     'no-param-reassign': 0,
     'comma-dangle': ['error', 'only-multiline'],
+    'consistent-return': 0,
   },
 };

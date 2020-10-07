@@ -1,0 +1,9 @@
+PUT http://localhost:3003/api/blogs/5f67fbe147eabc1ec0928c30
+Content-Type: application/json
+
+{
+  "author": "Ismile Hossain",
+  "title": "Test blog",
+  "url": "https://dev.to",
+  "likes": 500
+}
