@@ -6,6 +6,7 @@ const config = require('./utils/config');
 const logger = require('./utils/logger');
 const middleware = require('./utils/middleware');
 const blogsRouter = require('./controllers/blog');
+const usersRouter = require('./controllers/user');
 
 const app = express();
 
@@ -16,6 +17,7 @@ mongoose
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useFindAndModify: false,
+    useCreateIndex: true,
   })
   .then(() => {
     logger.info('✔ Connected to Database');
@@ -33,6 +35,7 @@ if (process.env.NODE_ENV !== 'test') {
 }
 
 app.use('/api/blogs', blogsRouter);
+app.use('/api/users', usersRouter);
 
 app.use(middleware.unknownEndpoint);
 app.use(middleware.errorHandler);
