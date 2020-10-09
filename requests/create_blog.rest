@@ -1,9 +1,10 @@
 POST http://localhost:3003/api/blogs
 Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImlhbWlzbWlsZSIsImlkIjoiNWY3ZmI0OTgxNDE1YjQyYzE4ZWNmZTY4IiwiaWF0IjoxNjAyMjA2MTcwfQ.1O-Kifr-ghPPw-M8SHkkqRwoUcaOqvDarASg82Aef6c
+
 
 {
-  "title": "Microservices and the First Law of Distributed Objects",
-  "author": "Martin Fowler",
-  "url": "https://martin-fowler.com/articles/microservices-and-the-first-law-of-distributed-objects",
-  "userId": "5f7fb4b91415b42c18ecfe69"
+  "title": "Test Blog 2",
+  "author": "Anonymous P",
+  "url": "https://www.dev.to"
 }

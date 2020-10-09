@@ -34,6 +34,7 @@ if (process.env.NODE_ENV !== 'test') {
     morgan(':status :method :url :response-time ms - :res[content-length]')
   );
 }
+app.use(middleware.tokenExtractor);
 
 app.use('/api/blogs', blogsRouter);
 app.use('/api/users', usersRouter);
