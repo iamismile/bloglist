@@ -2,9 +2,8 @@ POST http://localhost:3003/api/blogs
 Content-Type: application/json
 
 {
-  "title": "Test Blog 5",
-  "author": "Ismile Hossain",
-  "url": "http://www.dev.to",
-  "likes": 50,
-  "userId": "5f7e5ea1cccb471c1c6bfe32"
+  "title": "Microservices and the First Law of Distributed Objects",
+  "author": "Martin Fowler",
+  "url": "https://martin-fowler.com/articles/microservices-and-the-first-law-of-distributed-objects",
+  "userId": "5f7fb4b91415b42c18ecfe69"
 }
