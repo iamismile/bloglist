@@ -29,7 +29,7 @@ mongoose
 
 app.use(cors());
 app.use(express.json());
-if (process.env.NODE_ENV !== 'test') {
+if (process.env.NODE_ENV === 'development') {
   app.use(
     morgan(':status :method :url :response-time ms - :res[content-length]')
   );
