@@ -1,3 +1,4 @@
+const bcrypt = require('bcrypt');
 const Blog = require('../models/blog');
 const User = require('../models/user');
 
@@ -14,6 +15,17 @@ const initialBlogs = [
     url:
       'http://www.u.arizona.edu/~rubinson/copyright_violations/Go_To_Considered_Harmful.html',
     likes: 5,
+  },
+];
+
+const initialUsers = [
+  {
+    username: 'hellas',
+    password: 'qwerty',
+  },
+  {
+    username: 'root',
+    password: 'sekret',
   },
 ];
 
@@ -36,9 +48,20 @@ const usersInDb = async () => {
   return users.map((user) => user.toJSON());
 };
 
+const formattedUser = async (user) => {
+  const passwordHash = await bcrypt.hash(user.password, 10);
+
+  return {
+    username: user.username,
+    passwordHash,
+  };
+};
+
 module.exports = {
   initialBlogs,
+  initialUsers,
   blogsInDb,
   nonExistingId,
   usersInDb,
+  formattedUser,
 };
